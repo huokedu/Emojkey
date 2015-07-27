@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D9056B641B66E4BD00413C85 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9056B631B66E4BD00413C85 /* KeyboardViewController.swift */; };
 		D9056B671B66E4BD00413C85 /* EmojKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D9056B5F1B66E4BD00413C85 /* EmojKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D9056B6D1B66F2F100413C85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F755C21B62034700447687 /* Images.xcassets */; };
 		D964AFD01B66E0420016DA9B /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCE1B66E0420016DA9B /* Assets */; };
 		D964AFD11B66E0420016DA9B /* Backend in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCF1B66E0420016DA9B /* Backend */; };
 		D9F755BC1B62034700447687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F755BB1B62034700447687 /* AppDelegate.swift */; };
@@ -273,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9056B6D1B66F2F100413C85 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

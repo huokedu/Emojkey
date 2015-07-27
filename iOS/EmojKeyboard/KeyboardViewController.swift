@@ -25,13 +25,25 @@ class KeyboardViewController: UIInputViewController {
         super.viewDidLoad()
         
         //Setup gesture recognition
-        var touch = UITapGestureRecognizer(target:self, action:"touchAction")
+        var touch = UITapGestureRecognizer(target:self, action:"touchAction:")
         self.inputView.addGestureRecognizer(touch)
         view.userInteractionEnabled = true;
+        
+        var swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
     
         // Perform custom UI setup here
         addKeyboardButtons()
         addKeyboardEmoji();
+    }
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        print("We just swiped up!");
+        var proxy = textDocumentProxy as! UITextDocumentProxy
+        
+        proxy.insertText("Lolololol ")
+        
     }
     
     func touchAction() {
@@ -40,7 +52,18 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func addKeyboardEmoji(){
-        self.faceEmoji = UIImageView.yellowColor
+        let tempSmileImage = UIImage(named: "testSmile");
+        
+        self.faceEmoji = UIImageView(image: tempSmileImage!)
+        
+        self.view.addSubview(self.faceEmoji)
+        
+        let centerXConstr = NSLayoutConstraint(item: faceEmoji, attribute: .CenterX, relatedBy: .Equal, toItem:self.view, attribute: .CenterX, multiplier: 1.0, constant: 0.0);
+        let centerYConstr = NSLayoutConstraint(item: faceEmoji, attribute: .CenterY, relatedBy: .Equal, toItem:self.view, attribute: .CenterY, multiplier: 1.0, constant: 0.0);
+        let widthConstr   = NSLayoutConstraint(item: faceEmoji, attribute: .Width, relatedBy: .Equal, toItem:nil, attribute:NSLayoutAttribute.NotAnAttribute, multiplier:1.0, constant:300.0);
+        let heightConstr  = NSLayoutConstraint(item: faceEmoji, attribute: .Height, relatedBy: .Equal, toItem:nil, attribute:NSLayoutAttribute.NotAnAttribute, multiplier:1.0, constant:300.0);
+        self.view.addConstraints([widthConstr, heightConstr])
+        self.view.addConstraints([centerXConstr, centerYConstr])
         
     }
     
