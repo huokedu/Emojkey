@@ -24,18 +24,16 @@ class KeyboardViewController: UIInputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Setup gesture recognition
-        var touch = UITapGestureRecognizer(target:self, action:"touchAction:")
-        self.inputView.addGestureRecognizer(touch)
-        view.userInteractionEnabled = true;
         
-        var swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
-        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
-        self.view.addGestureRecognizer(swipeUp)
-    
         // Perform custom UI setup here
         addKeyboardButtons()
         addKeyboardEmoji();
+        
+        //Setup gesture recognition
+        var swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
+
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -52,18 +50,21 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func addKeyboardEmoji(){
-        let tempSmileImage = UIImage(named: "testSmile");
+        var touch = UITapGestureRecognizer(target:self, action:"touchAction:")
         
-        self.faceEmoji = UIImageView(image: tempSmileImage!)
+        let topFrame = CGRect(x: 0.0, y: 0.0, width: 750, height: view.frame.height/2)
+        let botFrame = CGRect(x: 0.0, y: view.frame.height/2, width: view.frame.width, height: view.frame.height)
+        print("\(topFrame)\n \(botFrame)")
         
-        self.view.addSubview(self.faceEmoji)
+        let topView    = TopEmojiView(frame: topFrame)
+        let bottomView = BottomEmojiView(frame: botFrame);
         
-        let centerXConstr = NSLayoutConstraint(item: faceEmoji, attribute: .CenterX, relatedBy: .Equal, toItem:self.view, attribute: .CenterX, multiplier: 1.0, constant: 0.0);
-        let centerYConstr = NSLayoutConstraint(item: faceEmoji, attribute: .CenterY, relatedBy: .Equal, toItem:self.view, attribute: .CenterY, multiplier: 1.0, constant: 0.0);
-        let widthConstr   = NSLayoutConstraint(item: faceEmoji, attribute: .Width, relatedBy: .Equal, toItem:nil, attribute:NSLayoutAttribute.NotAnAttribute, multiplier:1.0, constant:300.0);
-        let heightConstr  = NSLayoutConstraint(item: faceEmoji, attribute: .Height, relatedBy: .Equal, toItem:nil, attribute:NSLayoutAttribute.NotAnAttribute, multiplier:1.0, constant:300.0);
-        self.view.addConstraints([widthConstr, heightConstr])
-        self.view.addConstraints([centerXConstr, centerYConstr])
+        topView.addGestureRecognizer(touch);
+        bottomView.addGestureRecognizer(touch);
+        
+        self.view.addSubview(topView)
+        self.view.addSubview(bottomView)
+        
         
     }
     
