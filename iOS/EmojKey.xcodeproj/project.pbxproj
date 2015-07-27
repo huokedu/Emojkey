@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D964AFD01B66E0420016DA9B /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCE1B66E0420016DA9B /* Assets */; };
+		D964AFD11B66E0420016DA9B /* Backend in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCF1B66E0420016DA9B /* Backend */; };
 		D9F755BC1B62034700447687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F755BB1B62034700447687 /* AppDelegate.swift */; };
 		D9F755BE1B62034700447687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F755BD1B62034700447687 /* ViewController.swift */; };
 		D9F755C11B62034700447687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F755BF1B62034700447687 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D964AFCE1B66E0420016DA9B /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = ../Assets; sourceTree = "<group>"; };
+		D964AFCF1B66E0420016DA9B /* Backend */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Backend; path = ../Backend; sourceTree = "<group>"; };
 		D9F755B61B62034700447687 /* EmojKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F755BA1B62034700447687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F755BB1B62034700447687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 		D9F755AD1B62034700447687 = {
 			isa = PBXGroup;
 			children = (
+				D964AFCE1B66E0420016DA9B /* Assets */,
+				D964AFCF1B66E0420016DA9B /* Backend */,
 				D9F755B81B62034700447687 /* EmojKey */,
 				D9F755CE1B62034700447687 /* EmojKeyTests */,
 				D9F755B71B62034700447687 /* Products */,
@@ -193,7 +199,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F755C11B62034700447687 /* Main.storyboard in Resources */,
+				D964AFD01B66E0420016DA9B /* Assets in Resources */,
 				D9F755C61B62034700447687 /* LaunchScreen.xib in Resources */,
+				D964AFD11B66E0420016DA9B /* Backend in Resources */,
 				D9F755C31B62034700447687 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +417,7 @@
 				D9F755D71B62034700447687 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9F755D81B62034700447687 /* Build configuration list for PBXNativeTarget "EmojKeyTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +426,7 @@
 				D9F755DA1B62034700447687 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
