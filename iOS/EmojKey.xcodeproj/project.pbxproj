@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9056B641B66E4BD00413C85 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9056B631B66E4BD00413C85 /* KeyboardViewController.swift */; };
+		D9056B671B66E4BD00413C85 /* EmojKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D9056B5F1B66E4BD00413C85 /* EmojKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D964AFD01B66E0420016DA9B /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCE1B66E0420016DA9B /* Assets */; };
 		D964AFD11B66E0420016DA9B /* Backend in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCF1B66E0420016DA9B /* Backend */; };
 		D9F755BC1B62034700447687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F755BB1B62034700447687 /* AppDelegate.swift */; };
@@ -18,6 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D9056B651B66E4BD00413C85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9F755AE1B62034700447687 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9056B5E1B66E4BD00413C85;
+			remoteInfo = EmojKeyboard;
+		};
 		D9F755CC1B62034700447687 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D9F755AE1B62034700447687 /* Project object */;
@@ -27,7 +36,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D9056B6B1B66E4BD00413C85 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D9056B671B66E4BD00413C85 /* EmojKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D9056B5F1B66E4BD00413C85 /* EmojKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmojKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9056B621B66E4BD00413C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9056B631B66E4BD00413C85 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		D964AFCE1B66E0420016DA9B /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = ../Assets; sourceTree = "<group>"; };
 		D964AFCF1B66E0420016DA9B /* Backend */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Backend; path = ../Backend; sourceTree = "<group>"; };
 		D9F755B61B62034700447687 /* EmojKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +69,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D9056B5C1B66E4BD00413C85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9F755B31B62034700447687 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9056B601B66E4BD00413C85 /* EmojKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D9056B631B66E4BD00413C85 /* KeyboardViewController.swift */,
+				D9056B611B66E4BD00413C85 /* Supporting Files */,
+			);
+			path = EmojKeyboard;
+			sourceTree = "<group>";
+		};
+		D9056B611B66E4BD00413C85 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D9056B621B66E4BD00413C85 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D9F755AD1B62034700447687 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +117,7 @@
 				D964AFCF1B66E0420016DA9B /* Backend */,
 				D9F755B81B62034700447687 /* EmojKey */,
 				D9F755CE1B62034700447687 /* EmojKeyTests */,
+				D9056B601B66E4BD00413C85 /* EmojKeyboard */,
 				D9F755B71B62034700447687 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +127,7 @@
 			children = (
 				D9F755B61B62034700447687 /* EmojKey.app */,
 				D9F755CB1B62034700447687 /* EmojKeyTests.xctest */,
+				D9056B5F1B66E4BD00413C85 /* EmojKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +173,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D9056B5E1B66E4BD00413C85 /* EmojKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9056B6A1B66E4BD00413C85 /* Build configuration list for PBXNativeTarget "EmojKeyboard" */;
+			buildPhases = (
+				D9056B5B1B66E4BD00413C85 /* Sources */,
+				D9056B5C1B66E4BD00413C85 /* Frameworks */,
+				D9056B5D1B66E4BD00413C85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EmojKeyboard;
+			productName = EmojKeyboard;
+			productReference = D9056B5F1B66E4BD00413C85 /* EmojKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D9F755B51B62034700447687 /* EmojKey */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9F755D51B62034700447687 /* Build configuration list for PBXNativeTarget "EmojKey" */;
@@ -128,10 +197,12 @@
 				D9F755B21B62034700447687 /* Sources */,
 				D9F755B31B62034700447687 /* Frameworks */,
 				D9F755B41B62034700447687 /* Resources */,
+				D9056B6B1B66E4BD00413C85 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D9056B661B66E4BD00413C85 /* PBXTargetDependency */,
 			);
 			name = EmojKey;
 			productName = EmojKey;
@@ -165,6 +236,9 @@
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Matthew Carlson";
 				TargetAttributes = {
+					D9056B5E1B66E4BD00413C85 = {
+						CreatedOnToolsVersion = 6.4;
+					};
 					D9F755B51B62034700447687 = {
 						CreatedOnToolsVersion = 6.4;
 					};
@@ -189,11 +263,19 @@
 			targets = (
 				D9F755B51B62034700447687 /* EmojKey */,
 				D9F755CA1B62034700447687 /* EmojKeyTests */,
+				D9056B5E1B66E4BD00413C85 /* EmojKeyboard */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D9056B5D1B66E4BD00413C85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9F755B41B62034700447687 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +298,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D9056B5B1B66E4BD00413C85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9056B641B66E4BD00413C85 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9F755B21B62034700447687 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,6 +326,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D9056B661B66E4BD00413C85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9056B5E1B66E4BD00413C85 /* EmojKeyboard */;
+			targetProxy = D9056B651B66E4BD00413C85 /* PBXContainerItemProxy */;
+		};
 		D9F755CD1B62034700447687 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D9F755B51B62034700447687 /* EmojKey */;
@@ -263,6 +358,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D9056B681B66E4BD00413C85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EmojKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D9056B691B66E4BD00413C85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EmojKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		D9F755D31B62034700447687 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -401,6 +520,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D9056B6A1B66E4BD00413C85 /* Build configuration list for PBXNativeTarget "EmojKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9056B681B66E4BD00413C85 /* Debug */,
+				D9056B691B66E4BD00413C85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D9F755B11B62034700447687 /* Build configuration list for PBXProject "EmojKey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

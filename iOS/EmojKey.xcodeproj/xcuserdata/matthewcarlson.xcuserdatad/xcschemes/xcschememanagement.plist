@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>EmojKeyboard.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>D9056B5E1B66E4BD00413C85</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D9F755B51B62034700447687</key>
 		<dict>
 			<key>primary</key>
