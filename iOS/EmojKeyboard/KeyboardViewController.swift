@@ -48,6 +48,7 @@ class KeyboardViewController: UIInputViewController {
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         print("We just swiped up!");
+        UIPasteboard.generalPasteboard().image = mergeEmoji(topView!.currentImage(), mouth: bottomView!.currentImage())
         var proxy = textDocumentProxy as! UITextDocumentProxy
         
         proxy.insertText("Lolololol ")
@@ -76,8 +77,8 @@ class KeyboardViewController: UIInputViewController {
     func setupKeyboardEmoji(){
         print("\(view.frame.minX) x \(view.frame.minY)\n")
         print("\(view.frame.height) x \(view.frame.width)\n")
-        let topFrame = CGRect(x: 0.0, y: 0.0, width: view.frame.width, height: view.frame.height/2)
-        let botFrame = CGRect(x: 0.0, y: view.frame.height/2, width: view.frame.width, height: view.frame.height)
+        let topFrame = CGRect(x: 0.0, y: 0.0, width: view.frame.width, height: view.frame.height/2-8)
+        let botFrame = CGRect(x: 0.0, y: view.frame.height/2-8, width: view.frame.width, height: view.frame.height)
         
         topView!.frame = topFrame;
         bottomView!.frame = botFrame;
@@ -145,5 +146,18 @@ class KeyboardViewController: UIInputViewController {
         }
         //self.nextKeyboardButton.setTitleColor(textColor, forState: .Normal)
     }
-
+    
+    func mergeEmoji(eyes:UIImage, mouth:UIImage)->UIImage{
+        //let render = UIImage()
+        let rect = CGRectMake(0, 0, 339.0, 197.0)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0);
+        
+        eyes.drawAtPoint(CGPoint(x: 0, y: 0))
+        mouth.drawAtPoint(CGPoint(x: 0, y: 90))
+        
+        let render = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return render;
+    }
+    
 }
