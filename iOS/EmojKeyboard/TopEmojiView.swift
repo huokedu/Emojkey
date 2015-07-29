@@ -13,11 +13,12 @@ class TopEmojiView: UIView{
     
     private let backKeyboardButton = UIButton.buttonWithType(.Custom) as! UIButton
     private var imageIndex = 0
-    private let maxImages  = 10
+    static let maxImages  = 10
     private let emojImage  = UIImageView()
     private let emojWidth:CGFloat  = 339.0
     private let emojHeight:CGFloat = 90.5
     private let emojAnim  = UIImageView()
+    private var animatedEmoj = [UIImage?](count:maxImages, repeatedValue:nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame);
@@ -50,6 +51,43 @@ class TopEmojiView: UIView{
         
         self.addSubview(emojImage)
         self.addSubview(emojAnim)
+        self.sendSubviewToBack(emojImage)
+        
+        loadAnimations()
+    }
+    
+    func loadAnimations(){
+        backgroundThread(background: {
+                // Your function here to run in the background
+                for i in 0...TopEmojiView.maxImages-1{
+                    print("Loaded GIF \(i)\t")
+                    self.animatedEmoj[i] = self.loadAnimatedGIF(i)
+                }
+            },
+            completion: {
+                // A function to run in the foreground when the background thread is complete
+                print("Loaded all animated assets\n")
+        });
+    }
+    
+    func loadAnimatedGIF(i:Int)->UIImage?{
+        let names = ["","","angry","","suprised","","","","","","",""]
+        if (names[i] == ""){
+            return nil
+        }
+        let url = NSBundle.mainBundle().URLForResource(names[i], withExtension: "gif")
+        let GIF = UIImage.animatedImageWithAnimatedGIFURL(url)
+        if  GIF == nil {
+            print("The gif: \(names[i]) doesn't exist\n")
+            return nil
+        }
+        else{
+            print("Yay! The gif: \(names[i]) exist\n")
+            
+        }
+        
+        return GIF
+        
     }
     
     func currentImage()->UIImage{
@@ -67,17 +105,30 @@ class TopEmojiView: UIView{
         print("Loaded Mouth\(imageIndex+1)\n")
     }
     
+    private func finishedTransition(){
+        self.emojAnim.hidden = true
+        if (self.animatedEmoj[imageIndex] != nil){
+            print("Using animation on \(imageIndex)")
+            self.emojImage.image = animatedEmoj[imageIndex]
+            self.emojImage.startAnimating()
+        }
+        
+    }
+    private func startTransition(){
+        emojAnim.hidden = false
+        emojImage.hidden = false
+        self.emojImage.stopAnimating()
+    }
+    
     func backButtonTarget(target:AnyObject, action:Selector, events:UIControlEvents){
         backKeyboardButton.addTarget(target, action: action, forControlEvents: events)
     }
     
     func moveImages(#goleft:Bool){
+        startTransition();
+        
         CATransaction.begin()
-        CATransaction.setCompletionBlock({
-            self.emojAnim.hidden = true
-        })
-        emojAnim.hidden = false
-        emojImage.hidden = false
+        CATransaction.setCompletionBlock(finishedTransition)
         var newX:CGFloat = 400;
         if (goleft){
             newX = -400;
@@ -123,7 +174,7 @@ class TopEmojiView: UIView{
                 imageIndex--
                 // check if index is in range
                 if imageIndex < 0 {
-                    imageIndex = maxImages - 1
+                    imageIndex = TopEmojiView.maxImages - 1
                 }
                 updateImage()
                 moveImages(goleft: false)
@@ -138,7 +189,7 @@ class TopEmojiView: UIView{
                 
                 // check if index is in range
                 
-                if imageIndex >= maxImages {
+                if imageIndex >= TopEmojiView.maxImages {
                     
                     imageIndex = 0
                     
@@ -155,6 +206,17 @@ class TopEmojiView: UIView{
         }
         
         
+    }
+    
+    func backgroundThread(delay: Double = 0.0, background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
+        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.value), 0)) {
+            if(background != nil){ background!(); }
+            
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
+            dispatch_after(popTime, dispatch_get_main_queue()) {
+                if(completion != nil){ completion!(); }
+            }
+        }
     }
     
 }

@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		D9056B641B66E4BD00413C85 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9056B631B66E4BD00413C85 /* KeyboardViewController.swift */; };
 		D9056B671B66E4BD00413C85 /* EmojKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D9056B5F1B66E4BD00413C85 /* EmojKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D9056B6D1B66F2F100413C85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F755C21B62034700447687 /* Images.xcassets */; };
 		D9056B761B66FCDC00413C85 /* BottomEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9056B741B66FCDC00413C85 /* BottomEmojiView.swift */; };
 		D9056B771B66FCDC00413C85 /* TopEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9056B751B66FCDC00413C85 /* TopEmojiView.swift */; };
 		D90FC56F1B68AD8C004FC968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90FC56E1B68AD8C004FC968 /* UIKit.framework */; };
 		D90FC5711B68BD6C004FC968 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FC5701B68BD6C004FC968 /* Spinner.swift */; };
+		D90FC5751B694C7C004FC968 /* UIAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D90FC5741B694C7C004FC968 /* UIAnimatedImage.m */; };
+		D90FC5781B6950F7004FC968 /* angry.gif in Resources */ = {isa = PBXBuildFile; fileRef = D90FC5771B6950F7004FC968 /* angry.gif */; };
+		D90FC57A1B695115004FC968 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F755C21B62034700447687 /* Images.xcassets */; };
 		D964AFD01B66E0420016DA9B /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCE1B66E0420016DA9B /* Assets */; };
 		D964AFD11B66E0420016DA9B /* Backend in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCF1B66E0420016DA9B /* Backend */; };
 		D9F755BC1B62034700447687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F755BB1B62034700447687 /* AppDelegate.swift */; };
@@ -63,6 +65,10 @@
 		D9056B751B66FCDC00413C85 /* TopEmojiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopEmojiView.swift; path = EmojKeyboard/TopEmojiView.swift; sourceTree = SOURCE_ROOT; };
 		D90FC56E1B68AD8C004FC968 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D90FC5701B68BD6C004FC968 /* Spinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		D90FC5721B694C22004FC968 /* UIAnimatedImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UIAnimatedImage.h; path = ../UIAnimatedImage.h; sourceTree = "<group>"; };
+		D90FC5731B694C7C004FC968 /* EmojKeyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmojKeyboard-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		D90FC5741B694C7C004FC968 /* UIAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAnimatedImage.m; sourceTree = "<group>"; };
+		D90FC5771B6950F7004FC968 /* angry.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = angry.gif; sourceTree = "<group>"; };
 		D964AFCE1B66E0420016DA9B /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = ../Assets; sourceTree = "<group>"; };
 		D964AFCF1B66E0420016DA9B /* Backend */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Backend; path = ../Backend; sourceTree = "<group>"; };
 		D9F755B61B62034700447687 /* EmojKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +112,10 @@
 		D9056B601B66E4BD00413C85 /* EmojKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				D90FC5791B6950FC004FC968 /* GIFS */,
+				D90FC5721B694C22004FC968 /* UIAnimatedImage.h */,
+				D90FC5741B694C7C004FC968 /* UIAnimatedImage.m */,
+				D90FC5731B694C7C004FC968 /* EmojKeyboard-Bridging-Header.h */,
 				D9056B741B66FCDC00413C85 /* BottomEmojiView.swift */,
 				D9056B751B66FCDC00413C85 /* TopEmojiView.swift */,
 				D9056B631B66E4BD00413C85 /* KeyboardViewController.swift */,
@@ -121,6 +131,14 @@
 				D9056B621B66E4BD00413C85 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D90FC5791B6950FC004FC968 /* GIFS */ = {
+			isa = PBXGroup;
+			children = (
+				D90FC5771B6950F7004FC968 /* angry.gif */,
+			);
+			name = GIFS;
 			sourceTree = "<group>";
 		};
 		D9F755AD1B62034700447687 = {
@@ -289,7 +307,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9056B6D1B66F2F100413C85 /* Images.xcassets in Resources */,
+				D90FC57A1B695115004FC968 /* Images.xcassets in Resources */,
+				D90FC5781B6950F7004FC968 /* angry.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +341,7 @@
 				D9056B771B66FCDC00413C85 /* TopEmojiView.swift in Sources */,
 				D9056B761B66FCDC00413C85 /* BottomEmojiView.swift in Sources */,
 				D9056B641B66E4BD00413C85 /* KeyboardViewController.swift in Sources */,
+				D90FC5751B694C7C004FC968 /* UIAnimatedImage.m in Sources */,
 				D90FC5711B68BD6C004FC968 /* Spinner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +401,7 @@
 		D9056B681B66E4BD00413C85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -392,12 +413,15 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "EmojKeyboard-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D9056B691B66E4BD00413C85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EmojKeyboard/Info.plist;
@@ -405,6 +429,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "EmojKeyboard-Bridging-Header.h";
 			};
 			name = Release;
 		};

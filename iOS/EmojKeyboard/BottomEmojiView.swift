@@ -117,7 +117,6 @@ class BottomEmojiView: UIView{
             default:
                 break //stops the code/codes nothing.
                 
-                
             }
             
         }

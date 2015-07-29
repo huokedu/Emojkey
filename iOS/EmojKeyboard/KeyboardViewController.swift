@@ -141,7 +141,7 @@ class KeyboardViewController: UIInputViewController {
     func mergeEmoji(eyes:UIImage, mouth:UIImage)->UIImage{
         //let render = UIImage()
         let rect = CGRectMake(0, 0, 339.0, 210.0)
-        let finalrect = CGRectMake(0, 0, rect.width/3, rect.height/3)
+        let finalrect = CGRectMake(0, 0, rect.width/2.4, rect.height/2.4)
         let background = UIImage(named:"EmojiBody")
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0);
         background?.drawAtPoint(CGPoint(x: 65, y: 0))
