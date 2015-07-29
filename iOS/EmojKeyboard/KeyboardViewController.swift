@@ -28,7 +28,7 @@ class KeyboardViewController: UIInputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(red: 1.0, green: 0.772, blue: 0.0, alpha: 1.0)
+        self.view.backgroundColor = UIColor(red: 1.0, green: 0.772, blue: 0.3725, alpha: 1.0)
         
         
         // Perform custom UI setup here
