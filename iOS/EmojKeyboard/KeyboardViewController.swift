@@ -12,6 +12,10 @@ class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton!
     @IBOutlet var faceEmoji: UIImageView!
+    
+    var topView:TopEmojiView?
+    var bottomView:BottomEmojiView?
+    
     var currentColor = 0
     let colors = [UIColor.redColor(), UIColor.brownColor(), UIColor.blueColor(), UIColor.yellowColor()]
 
@@ -26,14 +30,18 @@ class KeyboardViewController: UIInputViewController {
         
         
         // Perform custom UI setup here
-        addKeyboardButtons()
         addKeyboardEmoji();
+        addKeyboardButtons();
         
         //Setup gesture recognition
         var swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeUp.direction = UISwipeGestureRecognizerDirection.Up
         self.view.addGestureRecognizer(swipeUp)
 
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        setupKeyboardEmoji();
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -52,37 +60,51 @@ class KeyboardViewController: UIInputViewController {
     func addKeyboardEmoji(){
         var touch = UITapGestureRecognizer(target:self, action:"touchAction:")
         
-        let topFrame = CGRect(x: 0.0, y: 0.0, width: 750, height: view.frame.height/2)
-        let botFrame = CGRect(x: 0.0, y: view.frame.height/2, width: view.frame.width, height: view.frame.height)
+        let topFrame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 90)
+        let botFrame = CGRect(x: 0.0, y: 100, width: 375.0, height: 90)
         print("\(topFrame)\n \(botFrame)")
         
-        let topView    = TopEmojiView(frame: topFrame)
-        let bottomView = BottomEmojiView(frame: botFrame);
+        topView    = TopEmojiView(frame: topFrame)
+        bottomView = BottomEmojiView(frame: botFrame);
         
-        topView.addGestureRecognizer(touch);
-        bottomView.addGestureRecognizer(touch);
+        topView!.addGestureRecognizer(touch);
+        bottomView!.addGestureRecognizer(touch);
         
-        self.view.addSubview(topView)
-        self.view.addSubview(bottomView)
-        
+        self.view.addSubview(topView!)
+        self.view.addSubview(bottomView!)
         
     }
     
+    func setupKeyboardEmoji(){
+        print("\(view.frame.minX) x \(view.frame.minY)\n")
+        print("\(view.frame.height) x \(view.frame.width)\n")
+        let topFrame = CGRect(x: 0.0, y: 0.0, width: view.frame.width, height: view.frame.height/2)
+        let botFrame = CGRect(x: 0.0, y: view.frame.height/2, width: view.frame.width, height: view.frame.height)
+        
+        topView!.frame = topFrame;
+        bottomView!.frame = botFrame;
+        
+        topView!.layoutIfNeeded()
+        bottomView!.layoutIfNeeded()
+    }
+    
     func addKeyboardButtons(){
-        self.nextKeyboardButton = UIButton.buttonWithType(.System) as! UIButton
+        /*self.nextKeyboardButton = UIButton.buttonWithType(.System) as! UIButton
         
         
         self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), forState: .Normal)
         self.nextKeyboardButton.sizeToFit()
         self.nextKeyboardButton.setTranslatesAutoresizingMaskIntoConstraints(false)
         
-        self.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
+        //self.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
         
         self.view.addSubview(self.nextKeyboardButton)
         
         var nextKeyboardButtonLeftSideConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
         var nextKeyboardButtonBottomConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: -10.0)
-        self.view.addConstraints([nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint])
+        self.view.addConstraints([nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint])*/
+        
+        bottomView?.nextButtonTarget(self, action: "advanceToNextInputMode", events: .TouchUpInside)
     }
     
     func touchAction(sender: UITapGestureRecognizer) {
@@ -123,7 +145,7 @@ class KeyboardViewController: UIInputViewController {
         } else {
             textColor = UIColor.blackColor()
         }
-        self.nextKeyboardButton.setTitleColor(textColor, forState: .Normal)
+        //self.nextKeyboardButton.setTitleColor(textColor, forState: .Normal)
     }
 
 }

@@ -541,6 +541,7 @@
 				D9056B691B66E4BD00413C85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9F755B11B62034700447687 /* Build configuration list for PBXProject "EmojKey" */ = {
 			isa = XCConfigurationList;
