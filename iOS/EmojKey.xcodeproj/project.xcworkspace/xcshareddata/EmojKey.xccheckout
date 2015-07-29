@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>362B59C7-4C4E-4092-AF6D-51D517CEA76B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>EmojKey</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F53A0FE4EFD20F5D217B2A9B902889049996E089</key>
 		<string>https://github.com/matthewfcarlson/Emojkey.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS/EmojKey.xcodeproj/project.xcworkspace</string>
+	<string>iOS/EmojKey.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F53A0FE4EFD20F5D217B2A9B902889049996E089</key>
