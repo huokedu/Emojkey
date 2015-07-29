@@ -28,6 +28,8 @@ class KeyboardViewController: UIInputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(red: 1.0, green: 0.772, blue: 0.3725, alpha: 1.0)
+        
         
         // Perform custom UI setup here
         addKeyboardEmoji();
@@ -52,23 +54,19 @@ class KeyboardViewController: UIInputViewController {
         
     }
     
-    func touchAction() {
-        print("Tapped with no info");
-        changeColor(-1);
-    }
-    
     func addKeyboardEmoji(){
-        var touch = UITapGestureRecognizer(target:self, action:"touchAction:")
+        var toptouch = UITapGestureRecognizer(target:self, action:"touchAction:")
+        var bottouch = UITapGestureRecognizer(target:self, action:"touchAction:")
         
-        let topFrame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 90)
-        let botFrame = CGRect(x: 0.0, y: 100, width: 375.0, height: 90)
+        let topFrame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 108.0)
+        let botFrame = CGRect(x: 0.0, y: 108.0, width: 375.0, height: 108.0)
         print("\(topFrame)\n \(botFrame)")
         
         topView    = TopEmojiView(frame: topFrame)
         bottomView = BottomEmojiView(frame: botFrame);
         
-        topView!.addGestureRecognizer(touch);
-        bottomView!.addGestureRecognizer(touch);
+        topView!.addGestureRecognizer(toptouch);
+        bottomView!.addGestureRecognizer(bottouch);
         
         self.view.addSubview(topView!)
         self.view.addSubview(bottomView!)
@@ -110,7 +108,7 @@ class KeyboardViewController: UIInputViewController {
     func touchAction(sender: UITapGestureRecognizer) {
         if sender.state == .Ended {
             print("Tapped");
-            changeColor(1);
+            //changeColor(1);
         }
     }
     

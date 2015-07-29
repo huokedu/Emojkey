@@ -14,7 +14,6 @@ class TopEmojiView: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame);
         print("Top view started");
-        self.backgroundColor = UIColor.redColor()
         self.userInteractionEnabled = true;
     }
 
