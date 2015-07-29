@@ -43,7 +43,9 @@ class KeyboardViewController: UIInputViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        becomeFirstResponder()
         setupKeyboardEmoji();
+
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -91,20 +93,6 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func addKeyboardButtons(){
-        /*self.nextKeyboardButton = UIButton.buttonWithType(.System) as! UIButton
-        
-        
-        self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), forState: .Normal)
-        self.nextKeyboardButton.sizeToFit()
-        self.nextKeyboardButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        
-        //self.nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside)
-        
-        self.view.addSubview(self.nextKeyboardButton)
-        
-        var nextKeyboardButtonLeftSideConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 0.0)
-        var nextKeyboardButtonBottomConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: -10.0)
-        self.view.addConstraints([nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint])*/
         
         bottomView?.nextButtonTarget(self, action: "advanceToNextInputMode", events: .TouchUpInside)
         topView?.backButtonTarget(self, action: "backButton", events: .TouchUpInside)
@@ -132,6 +120,17 @@ class KeyboardViewController: UIInputViewController {
             currentColor -= colors.count;
         }
         self.view.backgroundColor = colors[currentColor];
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return false
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+        if (motion == UIEventSubtype.MotionShake)
+        {
+            print("Shaken not stirred")
+        }
     }
 
     override func didReceiveMemoryWarning() {
