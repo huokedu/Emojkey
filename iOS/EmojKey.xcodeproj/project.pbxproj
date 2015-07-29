@@ -10,7 +10,6 @@
 		D9056B641B66E4BD00413C85 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9056B631B66E4BD00413C85 /* KeyboardViewController.swift */; };
 		D9056B671B66E4BD00413C85 /* EmojKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D9056B5F1B66E4BD00413C85 /* EmojKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D9056B6D1B66F2F100413C85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F755C21B62034700447687 /* Images.xcassets */; };
-		D9056B731B66FBBE00413C85 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9056B721B66FBBE00413C85 /* KeyboardView.xib */; };
 		D9056B761B66FCDC00413C85 /* BottomEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9056B741B66FCDC00413C85 /* BottomEmojiView.swift */; };
 		D9056B771B66FCDC00413C85 /* TopEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9056B751B66FCDC00413C85 /* TopEmojiView.swift */; };
 		D90FC56F1B68AD8C004FC968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90FC56E1B68AD8C004FC968 /* UIKit.framework */; };
@@ -60,7 +59,6 @@
 		D9056B5F1B66E4BD00413C85 /* EmojKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmojKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9056B621B66E4BD00413C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9056B631B66E4BD00413C85 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
-		D9056B721B66FBBE00413C85 /* KeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		D9056B741B66FCDC00413C85 /* BottomEmojiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomEmojiView.swift; path = EmojKeyboard/BottomEmojiView.swift; sourceTree = SOURCE_ROOT; };
 		D9056B751B66FCDC00413C85 /* TopEmojiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopEmojiView.swift; path = EmojKeyboard/TopEmojiView.swift; sourceTree = SOURCE_ROOT; };
 		D90FC56E1B68AD8C004FC968 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -110,7 +108,6 @@
 			children = (
 				D9056B741B66FCDC00413C85 /* BottomEmojiView.swift */,
 				D9056B751B66FCDC00413C85 /* TopEmojiView.swift */,
-				D9056B721B66FBBE00413C85 /* KeyboardView.xib */,
 				D9056B631B66E4BD00413C85 /* KeyboardViewController.swift */,
 				D9056B611B66E4BD00413C85 /* Supporting Files */,
 				D90FC5701B68BD6C004FC968 /* Spinner.swift */,
@@ -293,7 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9056B6D1B66F2F100413C85 /* Images.xcassets in Resources */,
-				D9056B731B66FBBE00413C85 /* KeyboardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
