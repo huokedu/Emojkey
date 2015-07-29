@@ -14,6 +14,7 @@
 		D9056B761B66FCDC00413C85 /* BottomEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9056B741B66FCDC00413C85 /* BottomEmojiView.swift */; };
 		D9056B771B66FCDC00413C85 /* TopEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9056B751B66FCDC00413C85 /* TopEmojiView.swift */; };
 		D90FC56F1B68AD8C004FC968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90FC56E1B68AD8C004FC968 /* UIKit.framework */; };
+		D90FC5711B68BD6C004FC968 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FC5701B68BD6C004FC968 /* Spinner.swift */; };
 		D964AFD01B66E0420016DA9B /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCE1B66E0420016DA9B /* Assets */; };
 		D964AFD11B66E0420016DA9B /* Backend in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCF1B66E0420016DA9B /* Backend */; };
 		D9F755BC1B62034700447687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F755BB1B62034700447687 /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 		D9056B741B66FCDC00413C85 /* BottomEmojiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomEmojiView.swift; path = EmojKeyboard/BottomEmojiView.swift; sourceTree = SOURCE_ROOT; };
 		D9056B751B66FCDC00413C85 /* TopEmojiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopEmojiView.swift; path = EmojKeyboard/TopEmojiView.swift; sourceTree = SOURCE_ROOT; };
 		D90FC56E1B68AD8C004FC968 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D90FC5701B68BD6C004FC968 /* Spinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		D964AFCE1B66E0420016DA9B /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = ../Assets; sourceTree = "<group>"; };
 		D964AFCF1B66E0420016DA9B /* Backend */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Backend; path = ../Backend; sourceTree = "<group>"; };
 		D9F755B61B62034700447687 /* EmojKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				D9056B721B66FBBE00413C85 /* KeyboardView.xib */,
 				D9056B631B66E4BD00413C85 /* KeyboardViewController.swift */,
 				D9056B611B66E4BD00413C85 /* Supporting Files */,
+				D90FC5701B68BD6C004FC968 /* Spinner.swift */,
 			);
 			path = EmojKeyboard;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				D9056B771B66FCDC00413C85 /* TopEmojiView.swift in Sources */,
 				D9056B761B66FCDC00413C85 /* BottomEmojiView.swift in Sources */,
 				D9056B641B66E4BD00413C85 /* KeyboardViewController.swift in Sources */,
+				D90FC5711B68BD6C004FC968 /* Spinner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

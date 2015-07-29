@@ -49,9 +49,12 @@ class KeyboardViewController: UIInputViewController {
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         print("We just swiped up!");
         UIPasteboard.generalPasteboard().image = mergeEmoji(topView!.currentImage(), mouth: bottomView!.currentImage())
-        var proxy = textDocumentProxy as! UITextDocumentProxy
+        //var proxy = textDocumentProxy as! UITextDocumentProxy
         
-        proxy.insertText("Lolololol ")
+        //proxy.insertText("Lolololol ")
+        SwiftSpinner.show(self.view, title: "Copied to Clipboard!\nPaste in your Emoji!", animated: true).addTapHandler({
+            SwiftSpinner.hide()
+        });
         
     }
     
@@ -104,6 +107,12 @@ class KeyboardViewController: UIInputViewController {
         self.view.addConstraints([nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint])*/
         
         bottomView?.nextButtonTarget(self, action: "advanceToNextInputMode", events: .TouchUpInside)
+        topView?.backButtonTarget(self, action: "backButton", events: .TouchUpInside)
+    }
+    
+    func backButton(){
+        var proxy = textDocumentProxy as! UITextDocumentProxy
+        proxy.deleteBackward()
     }
     
     func touchAction(sender: UITapGestureRecognizer) {
@@ -144,16 +153,18 @@ class KeyboardViewController: UIInputViewController {
         } else {
             textColor = UIColor.blackColor()
         }
+        SwiftSpinner.hide()
         //self.nextKeyboardButton.setTitleColor(textColor, forState: .Normal)
     }
     
     func mergeEmoji(eyes:UIImage, mouth:UIImage)->UIImage{
         //let render = UIImage()
-        let rect = CGRectMake(0, 0, 339.0, 197.0)
+        let rect = CGRectMake(0, 0, 339.0, 210.0)
+        let background = UIImage(named:"EmojiBody")
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0);
-        
-        eyes.drawAtPoint(CGPoint(x: 0, y: 0))
-        mouth.drawAtPoint(CGPoint(x: 0, y: 90))
+        background?.drawAtPoint(CGPoint(x: 65, y: 0))
+        eyes.drawAtPoint(CGPoint(x: 0, y: 20))
+        mouth.drawAtPoint(CGPoint(x: 0, y: 110))
         
         let render = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();

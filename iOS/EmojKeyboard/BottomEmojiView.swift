@@ -15,6 +15,7 @@ class BottomEmojiView: UIView{
     private var imageIndex = 0
     private let maxImages  = 7
     private let emojImage = UIImageView()
+    private let emojAnim  = UIImageView()
     private let emojWidth:CGFloat  = 339.0
     private let emojHeight:CGFloat = 107.5
     
@@ -50,6 +51,7 @@ class BottomEmojiView: UIView{
         
         self.addSubview(self.nextKeyboardButton)
         self.addSubview(emojImage)
+        self.addSubview(emojAnim)
         //var nextKeyboardButtonLeftSideConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1.0, constant: 0.0)
         //var nextKeyboardButtonBottomConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
         //self.addConstraints([nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint])
@@ -70,6 +72,9 @@ class BottomEmojiView: UIView{
     }
     
     private func updateImage(){
+        emojAnim.frame = emojImage.frame
+        emojAnim.image = emojImage.image
+
         emojImage.image = UIImage(named: "Mouth\(imageIndex+1)")
         print("Loaded Mouth\(imageIndex+1)\n")
     }
@@ -89,6 +94,7 @@ class BottomEmojiView: UIView{
                     imageIndex = maxImages - 1
                 }
                 updateImage()
+                moveImages(goleft: false)
                 
                 
             case UISwipeGestureRecognizerDirection.Left:
@@ -106,7 +112,7 @@ class BottomEmojiView: UIView{
                     
                 }
                 updateImage()
-                
+                moveImages(goleft: true)
                 
             default:
                 break //stops the code/codes nothing.
@@ -118,4 +124,45 @@ class BottomEmojiView: UIView{
         
         
     }
+    
+    func moveImages(#goleft:Bool){
+        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+            self.emojAnim.hidden = true
+        })
+        emojAnim.hidden = false
+        emojImage.hidden = false
+        var newX:CGFloat = 400;
+        if (goleft){
+            newX = -400;
+        }
+        
+        var toPoint: CGPoint = CGPointMake(newX, 0.0)
+        var fromPoint : CGPoint = CGPointZero
+        
+        var movement = CABasicAnimation(keyPath: "position")
+        movement.additive = true
+        movement.fromValue =  NSValue(CGPoint: fromPoint)
+        movement.toValue =  NSValue(CGPoint: toPoint)
+        movement.duration = 0.2
+        
+        emojAnim.layer.addAnimation(movement, forKey: "move")
+        CATransaction.commit()
+        
+        var newX2:CGFloat = newX * -1;
+        
+        fromPoint = CGPointMake(newX2, 0.0)
+        toPoint   = CGPointZero
+        
+        var movement2 = CABasicAnimation(keyPath: "position")
+        movement2.additive = true
+        movement2.fromValue =  NSValue(CGPoint: fromPoint)
+        movement2.toValue =  NSValue(CGPoint: toPoint)
+        movement2.duration = movement.duration
+        
+        
+        emojImage.layer.addAnimation(movement2, forKey: "move")
+        
+    }
+
 }
