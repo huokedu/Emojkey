@@ -160,15 +160,55 @@ class KeyboardViewController: UIInputViewController {
     func mergeEmoji(eyes:UIImage, mouth:UIImage)->UIImage{
         //let render = UIImage()
         let rect = CGRectMake(0, 0, 339.0, 210.0)
+        let finalrect = CGRectMake(0, 0, rect.width/4, rect.height/4)
         let background = UIImage(named:"EmojiBody")
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0);
         background?.drawAtPoint(CGPoint(x: 65, y: 0))
-        eyes.drawAtPoint(CGPoint(x: 0, y: 20))
-        mouth.drawAtPoint(CGPoint(x: 0, y: 110))
+        eyes.drawAtPoint(CGPoint(x: 0, y: 30))
+        mouth.drawAtPoint(CGPoint(x: 0, y: 100))
         
         let render = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        return render;
+        let finalrender = scaleImage(render, toSize: finalrect.size)
+        return finalrender
+    }
+    
+    func scaleImage(image:UIImage,  toSize:CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(toSize, false, 0.0);
+        
+        let aspectRatioAwareSize = self.aspectRatioAwareSize(image.size, boxSize: toSize, useLetterBox: false)
+        
+        
+        let leftMargin = (toSize.width - aspectRatioAwareSize.width) * 0.5
+        let topMargin = (toSize.height - aspectRatioAwareSize.height) * 0.5
+        
+        
+        image.drawInRect(CGRectMake(leftMargin, topMargin, aspectRatioAwareSize.width , aspectRatioAwareSize.height))
+        let retVal = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return retVal
+    }
+    func aspectRatioAwareSize(imageSize: CGSize, boxSize: CGSize, useLetterBox: Bool) -> CGSize {
+        // aspect ratio aware size
+        // http://stackoverflow.com/a/6565988/8047
+        let wi = imageSize.width
+        let hi = imageSize.height
+        let ws = boxSize.width
+        let hs = boxSize.height
+        
+        let ri = wi/hi
+        let rs = ws/hs
+        
+        let retVal : CGSize
+        // use the else at your own risk: it seems to work, but I don't know
+        // the math
+        if (useLetterBox) {
+            retVal = rs > ri ? CGSizeMake(wi * hs / hi, hs) : CGSizeMake(ws, hi * ws / wi)
+        } else {
+            retVal = rs < ri ? CGSizeMake(wi * hs / hi, hs) : CGSizeMake(ws, hi * ws / wi)
+        }
+        
+        return retVal
     }
     
 }
