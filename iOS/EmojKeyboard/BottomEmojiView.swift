@@ -12,6 +12,7 @@ import UIKit
 class BottomEmojiView: UIView{
     
     private let nextKeyboardButton = UIButton.buttonWithType(.Custom) as! UIButton
+    private let micKeyboardButton  = UIButton.buttonWithType(.Custom) as! UIButton
     private var imageIndex = 0
     private let maxImages  = 11
     private let emojImage = UIImageView()
@@ -32,8 +33,20 @@ class BottomEmojiView: UIView{
             nextKeyboardButton.setBackgroundImage(buttonIcon, forState: UIControlState.Normal)
         }
         
+        if let buttonIcon = UIImage(named: "mic") {
+            micKeyboardButton.frame = CGRectMake(frame.width-30.0, frame.height-30.0, frame.width-10, frame.height)
+            micKeyboardButton.setBackgroundImage(buttonIcon, forState: UIControlState.Normal)
+        }
+        
         nextKeyboardButton.sizeToFit()
         nextKeyboardButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+        micKeyboardButton.sizeToFit()
+        micKeyboardButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+        self.addSubview(self.nextKeyboardButton)
+        self.addSubview(self.micKeyboardButton)
+        
         
         let x:CGFloat = (frame.width - emojWidth)/2
         let y:CGFloat = (frame.height - emojHeight)/2
@@ -49,7 +62,6 @@ class BottomEmojiView: UIView{
         self.addGestureRecognizer(swipeLeft)
         
         
-        self.addSubview(self.nextKeyboardButton)
         self.addSubview(emojImage)
         self.addSubview(emojAnim)
         //var nextKeyboardButtonLeftSideConstraint = NSLayoutConstraint(item: self.nextKeyboardButton, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1.0, constant: 0.0)
@@ -69,6 +81,10 @@ class BottomEmojiView: UIView{
     
     func nextButtonTarget(target:AnyObject, action:Selector, events:UIControlEvents){
         nextKeyboardButton.addTarget(target, action: action, forControlEvents: events)
+    }
+    
+    func micButtonTarget(target:AnyObject, action:Selector, events:UIControlEvents){
+        micKeyboardButton.addTarget(target, action: action, forControlEvents: events)
     }
     
     private func updateImage(){

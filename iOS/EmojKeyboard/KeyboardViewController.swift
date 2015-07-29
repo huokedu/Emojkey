@@ -15,6 +15,7 @@ class KeyboardViewController: UIInputViewController {
     
     var topView:TopEmojiView?
     var bottomView:BottomEmojiView?
+    var micView:UIView = UIView()
     
     var currentColor = 0
     let colors = [UIColor.redColor(), UIColor.brownColor(), UIColor.blueColor(), UIColor.yellowColor()]
@@ -44,6 +45,10 @@ class KeyboardViewController: UIInputViewController {
     
     override func viewDidAppear(animated: Bool) {
         setupKeyboardEmoji();
+        micView.frame = view.frame
+        micView.backgroundColor = UIColor(white: 0.12, alpha: 0.6)
+        micView.hidden = true
+        view.addSubview(micView)
 
     }
     
@@ -95,11 +100,21 @@ class KeyboardViewController: UIInputViewController {
         
         bottomView?.nextButtonTarget(self, action: "advanceToNextInputMode", events: .TouchUpInside)
         topView?.backButtonTarget(self, action: "backButton", events: .TouchUpInside)
+        bottomView?.micButtonTarget(self, action: "stopMic", events: .TouchUpInside)
+        bottomView?.micButtonTarget(self, action: "startMic", events: .TouchDown)
     }
     
     func backButton(){
         var proxy = textDocumentProxy as! UITextDocumentProxy
         proxy.deleteBackward()
+    }
+    
+    func startMic(){
+        micView.hidden = false;
+        self.view.bringSubviewToFront(micView)
+    }
+    func stopMic(){
+        micView.hidden = true;
     }
     
     func touchAction(sender: UITapGestureRecognizer) {
