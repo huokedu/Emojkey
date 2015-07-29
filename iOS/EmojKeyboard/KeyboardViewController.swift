@@ -43,7 +43,6 @@ class KeyboardViewController: UIInputViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        becomeFirstResponder()
         setupKeyboardEmoji();
 
     }
@@ -126,13 +125,6 @@ class KeyboardViewController: UIInputViewController {
         return false
     }
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
-        if (motion == UIEventSubtype.MotionShake)
-        {
-            print("Shaken not stirred")
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated

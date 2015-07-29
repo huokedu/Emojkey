@@ -13,7 +13,7 @@ class TopEmojiView: UIView{
     
     private let backKeyboardButton = UIButton.buttonWithType(.Custom) as! UIButton
     private var imageIndex = 0
-    private let maxImages  = 8
+    private let maxImages  = 10
     private let emojImage  = UIImageView()
     private let emojWidth:CGFloat  = 339.0
     private let emojHeight:CGFloat = 90.5

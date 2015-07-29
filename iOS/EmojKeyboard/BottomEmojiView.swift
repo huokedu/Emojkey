@@ -13,7 +13,7 @@ class BottomEmojiView: UIView{
     
     private let nextKeyboardButton = UIButton.buttonWithType(.Custom) as! UIButton
     private var imageIndex = 0
-    private let maxImages  = 7
+    private let maxImages  = 11
     private let emojImage = UIImageView()
     private let emojAnim  = UIImageView()
     private let emojWidth:CGFloat  = 339.0
