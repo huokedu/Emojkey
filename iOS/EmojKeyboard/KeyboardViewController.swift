@@ -135,23 +135,13 @@ class KeyboardViewController: UIInputViewController {
     }
 
     override func textDidChange(textInput: UITextInput) {
-        // The app has just changed the document's contents, the document context has been updated.
-    
-        var textColor: UIColor
-        var proxy = self.textDocumentProxy as! UITextDocumentProxy
-        if proxy.keyboardAppearance == UIKeyboardAppearance.Dark {
-            textColor = UIColor.whiteColor()
-        } else {
-            textColor = UIColor.blackColor()
-        }
         SwiftSpinner.hide()
-        //self.nextKeyboardButton.setTitleColor(textColor, forState: .Normal)
     }
     
     func mergeEmoji(eyes:UIImage, mouth:UIImage)->UIImage{
         //let render = UIImage()
         let rect = CGRectMake(0, 0, 339.0, 210.0)
-        let finalrect = CGRectMake(0, 0, rect.width/4, rect.height/4)
+        let finalrect = CGRectMake(0, 0, rect.width/3, rect.height/3)
         let background = UIImage(named:"EmojiBody")
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0);
         background?.drawAtPoint(CGPoint(x: 65, y: 0))
