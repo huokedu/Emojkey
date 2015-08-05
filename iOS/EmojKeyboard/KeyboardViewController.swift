@@ -15,10 +15,12 @@ class KeyboardViewController: UIInputViewController {
     
     var topView:TopEmojiView?
     var bottomView:BottomEmojiView?
-    var micView:UIView = UIView()
+    var micView:MicView = MicView()
     
     var currentColor = 0
-    let colors = [UIColor.redColor(), UIColor.brownColor(), UIColor.blueColor(), UIColor.yellowColor()]
+    let bodies = ["EmojiBody", "PoopBody"]
+    //198 137 96
+    let colors = [UIColor(red: 1.0, green: 0.772, blue: 0.3725, alpha: 1.0), UIColor(red: 0.7766, green: 0.537, blue: 0.3764 , alpha: 1.0),]
 
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -46,7 +48,7 @@ class KeyboardViewController: UIInputViewController {
     override func viewDidAppear(animated: Bool) {
         setupKeyboardEmoji();
         micView.frame = view.frame
-        micView.backgroundColor = UIColor(white: 0.12, alpha: 0.6)
+        
         micView.hidden = true
         view.addSubview(micView)
 
@@ -99,7 +101,7 @@ class KeyboardViewController: UIInputViewController {
     func addKeyboardButtons(){
         
         bottomView?.nextButtonTarget(self, action: "advanceToNextInputMode", events: .TouchUpInside)
-        topView?.backButtonTarget(self, action: "backButton", events: .TouchUpInside)
+        topView?.backButtonTarget(self,   action: "backButton", events: .TouchUpInside)
         bottomView?.micButtonTarget(self, action: "stopMic", events: .TouchUpInside)
         bottomView?.micButtonTarget(self, action: "startMic", events: .TouchDown)
     }
@@ -110,23 +112,22 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func startMic(){
-        micView.hidden = false;
+        micView.startListening()
         self.view.bringSubviewToFront(micView)
     }
     func stopMic(){
-        micView.hidden = true;
+        micView.stopListening()
     }
     
     func touchAction(sender: UITapGestureRecognizer) {
         if sender.state == .Ended {
             print("Tapped");
-            //changeColor(1);
+            changeColor();
         }
     }
     
-    func changeColor(increment: Int){
-        let inc = increment % colors.count;
-        currentColor += inc;
+    func changeColor(){
+        currentColor += 1;
         if (currentColor<0) {
             currentColor += colors.count;
         }
@@ -156,8 +157,8 @@ class KeyboardViewController: UIInputViewController {
     func mergeEmoji(eyes:UIImage, mouth:UIImage)->UIImage{
         //let render = UIImage()
         let rect = CGRectMake(0, 0, 339.0, 210.0)
-        let finalrect = CGRectMake(0, 0, rect.width/2.4, rect.height/2.4)
-        let background = UIImage(named:"EmojiBody")
+        let finalrect = CGRectMake(0, 0, rect.width/3.3, rect.height/3.3)
+        let background = UIImage(named:bodies[currentColor])
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0);
         background?.drawAtPoint(CGPoint(x: 65, y: 0))
         eyes.drawAtPoint(CGPoint(x: 0, y: 30))

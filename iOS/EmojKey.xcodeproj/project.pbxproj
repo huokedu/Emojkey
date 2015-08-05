@@ -16,6 +16,10 @@
 		D90FC5751B694C7C004FC968 /* UIAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D90FC5741B694C7C004FC968 /* UIAnimatedImage.m */; };
 		D90FC5781B6950F7004FC968 /* angry.gif in Resources */ = {isa = PBXBuildFile; fileRef = D90FC5771B6950F7004FC968 /* angry.gif */; };
 		D90FC57A1B695115004FC968 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F755C21B62034700447687 /* Images.xcassets */; };
+		D90FC57C1B6A9E8F004FC968 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90FC57B1B6A9E8F004FC968 /* AVFoundation.framework */; };
+		D90FC57E1B6A9E98004FC968 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90FC57D1B6A9E98004FC968 /* CoreAudio.framework */; };
+		D90FC5801B6A9EA3004FC968 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90FC57F1B6A9EA3004FC968 /* AudioToolbox.framework */; };
+		D90FC5841B6AA214004FC968 /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FC5831B6AA214004FC968 /* MicView.swift */; };
 		D964AFD01B66E0420016DA9B /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCE1B66E0420016DA9B /* Assets */; };
 		D964AFD11B66E0420016DA9B /* Backend in Resources */ = {isa = PBXBuildFile; fileRef = D964AFCF1B66E0420016DA9B /* Backend */; };
 		D9F755BC1B62034700447687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F755BB1B62034700447687 /* AppDelegate.swift */; };
@@ -24,6 +28,7 @@
 		D9F755C31B62034700447687 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F755C21B62034700447687 /* Images.xcassets */; };
 		D9F755C61B62034700447687 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F755C41B62034700447687 /* LaunchScreen.xib */; };
 		D9F755D21B62034700447687 /* EmojKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F755D11B62034700447687 /* EmojKeyTests.swift */; };
+		D9FEE9EC1B6AE8CE00E778F4 /* Todo in Resources */ = {isa = PBXBuildFile; fileRef = D9FEE9EB1B6AE8CE00E778F4 /* Todo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,11 @@
 		D90FC5731B694C7C004FC968 /* EmojKeyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmojKeyboard-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		D90FC5741B694C7C004FC968 /* UIAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAnimatedImage.m; sourceTree = "<group>"; };
 		D90FC5771B6950F7004FC968 /* angry.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = angry.gif; sourceTree = "<group>"; };
+		D90FC57B1B6A9E8F004FC968 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D90FC57D1B6A9E98004FC968 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		D90FC57F1B6A9EA3004FC968 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D90FC5831B6AA214004FC968 /* MicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicView.swift; sourceTree = "<group>"; };
+		D90FC5851B6AA9E9004FC968 /* SpeechSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechSDK.framework; path = EmojKeyboard/SpeechSDK.framework; sourceTree = "<group>"; };
 		D964AFCE1B66E0420016DA9B /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = ../Assets; sourceTree = "<group>"; };
 		D964AFCF1B66E0420016DA9B /* Backend */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Backend; path = ../Backend; sourceTree = "<group>"; };
 		D9F755B61B62034700447687 /* EmojKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +91,7 @@
 		D9F755CB1B62034700447687 /* EmojKeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojKeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F755D01B62034700447687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F755D11B62034700447687 /* EmojKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojKeyTests.swift; sourceTree = "<group>"; };
+		D9FEE9EB1B6AE8CE00E778F4 /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +99,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90FC5801B6A9EA3004FC968 /* AudioToolbox.framework in Frameworks */,
+				D90FC57E1B6A9E98004FC968 /* CoreAudio.framework in Frameworks */,
+				D90FC57C1B6A9E8F004FC968 /* AVFoundation.framework in Frameworks */,
 				D90FC56F1B68AD8C004FC968 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,8 +133,10 @@
 				D9056B741B66FCDC00413C85 /* BottomEmojiView.swift */,
 				D9056B751B66FCDC00413C85 /* TopEmojiView.swift */,
 				D9056B631B66E4BD00413C85 /* KeyboardViewController.swift */,
+				D9FEE9EB1B6AE8CE00E778F4 /* Todo */,
 				D9056B611B66E4BD00413C85 /* Supporting Files */,
 				D90FC5701B68BD6C004FC968 /* Spinner.swift */,
+				D90FC5831B6AA214004FC968 /* MicView.swift */,
 			);
 			path = EmojKeyboard;
 			sourceTree = "<group>";
@@ -144,6 +160,10 @@
 		D9F755AD1B62034700447687 = {
 			isa = PBXGroup;
 			children = (
+				D90FC5851B6AA9E9004FC968 /* SpeechSDK.framework */,
+				D90FC57F1B6A9EA3004FC968 /* AudioToolbox.framework */,
+				D90FC57D1B6A9E98004FC968 /* CoreAudio.framework */,
+				D90FC57B1B6A9E8F004FC968 /* AVFoundation.framework */,
 				D90FC56E1B68AD8C004FC968 /* UIKit.framework */,
 				D964AFCE1B66E0420016DA9B /* Assets */,
 				D964AFCF1B66E0420016DA9B /* Backend */,
@@ -308,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D90FC57A1B695115004FC968 /* Images.xcassets in Resources */,
+				D9FEE9EC1B6AE8CE00E778F4 /* Todo in Resources */,
 				D90FC5781B6950F7004FC968 /* angry.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90FC5841B6AA214004FC968 /* MicView.swift in Sources */,
 				D9056B771B66FCDC00413C85 /* TopEmojiView.swift in Sources */,
 				D9056B761B66FCDC00413C85 /* BottomEmojiView.swift in Sources */,
 				D9056B641B66E4BD00413C85 /* KeyboardViewController.swift in Sources */,
@@ -404,6 +426,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/matthewcarlson/Documents/SpeechSDK,
+					"$(PROJECT_DIR)/EmojKeyboard",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -424,6 +451,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/matthewcarlson/Documents/SpeechSDK,
+					"$(PROJECT_DIR)/EmojKeyboard",
+				);
 				INFOPLIST_FILE = EmojKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

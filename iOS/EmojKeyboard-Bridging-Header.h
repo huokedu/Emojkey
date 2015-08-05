@@ -3,3 +3,4 @@
 //
 
 #include "UIAnimatedImage.h"
+#include <SpeechSDK/SpeechRecognitionService.h>

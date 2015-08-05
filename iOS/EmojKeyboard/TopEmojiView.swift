@@ -18,6 +18,7 @@ class TopEmojiView: UIView{
     private let emojWidth:CGFloat  = 339.0
     private let emojHeight:CGFloat = 90.5
     private let emojAnim  = UIImageView()
+    private var currentUImage = UIImage();
     private var animatedEmoj = [UIImage?](count:maxImages, repeatedValue:nil)
     
     override init(frame: CGRect) {
@@ -91,7 +92,7 @@ class TopEmojiView: UIView{
     }
     
     func currentImage()->UIImage{
-        return emojImage.image!
+        return currentUImage
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -102,6 +103,7 @@ class TopEmojiView: UIView{
         emojAnim.frame = emojImage.frame
         emojAnim.image = emojImage.image
         emojImage.image = UIImage(named: "Eyes\(imageIndex+1)")
+        currentUImage = emojImage.image!
         print("Loaded Mouth\(imageIndex+1)\n")
     }
     
